@@ -41,6 +41,9 @@ jobs:
      run: |
       sudo apt-get update
       sudo apt-get install -y docker.io
+
+   - name: Fix Broken Dependencies
+     run: sudo apt-get install -f -y
    
    - name: Set up Docker
      uses: docker-practice/actions-setup-docker@v1
