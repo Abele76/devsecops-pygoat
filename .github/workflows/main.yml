@@ -37,24 +37,24 @@ jobs:
    - name: Checkout code
      uses: actions/checkout@v2
 
-   - name: Set up Docker Buildx
-     uses: docker/setup-buildx-action@v2
+ #  - name: Set up Docker Buildx
+   #  uses: docker/setup-buildx-action@v2
   
-  # - name: Set up Docker
-   #  uses: docker-practice/actions-setup-docker@v1
-   #  with:
-    #  docker_version: '28.0.1'
-
-   - name: Build and Push Docker Image
-     uses: docker/build-push-action@v5
+   - name: Set up Docker
+     uses: docker-practice/actions-setup-docker@v1
      with:
-        context: .
-        file: ./Dockerfile
-        push: true
-        tags: abele76/myapp:latest
+      docker_version: '28.0.1'
 
- #  - name: Build Docker Image
-   #  run: docker build -f Dockerfile -t myapp:latest .
+ #  - name: Build and Push Docker Image
+   #  uses: docker/build-push-action@v5
+   #  with:
+      #  context: .
+      #  file: ./Dockerfile
+      #  push: true
+      #  tags: abele76/myapp:latest
+
+   - name: Build Docker Image
+     run: docker build -f Dockerfile -t myapp:latest .
 
    # - name: Docker Scout Scan
      # run: |
