@@ -51,7 +51,8 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-   
+        tags: ${{ secrets.REPO_USER }}/myapp:latest
+
  #  - name: Build Docker Image
    #  run: docker build -f Dockerfile -t myapp:latest .
 
